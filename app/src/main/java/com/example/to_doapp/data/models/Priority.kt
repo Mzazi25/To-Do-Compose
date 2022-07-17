@@ -8,7 +8,7 @@ import com.example.to_doapp.ui.theme.nonePriority
 
 enum class Priority(val color: Color) {
     HIGH(highPriority),
-    MEDIUM(mediumPriority),
     LOW(lowPriority),
-    NONE(nonePriority),
+    MEDIUM(mediumPriority),
+    NONE(nonePriority)
 }

@@ -6,4 +6,6 @@ object Constants {
 
     const val LIST_SCREEN = "list/{action}"
     const val TASK_SCREEN = "task/{taskId}"
+    const val LIST_ARGUMENTS = "action"
+    const val TASK_ARGUMENTS = "taskId"
 }

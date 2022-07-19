@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.to_doapp.navigation.destinations.listComposable
+import com.example.to_doapp.navigation.destinations.taskComposable
 import com.example.to_doapp.util.Constants.LIST_SCREEN
 
 @Composable
@@ -20,6 +21,9 @@ fun SetupNavigation(navController: NavHostController) {
     ){
         listComposable(
             navigateToTaskScreen = screen.task
+        )
+        taskComposable(
+            navigateToListScreen = screen.list
         )
     }
 }

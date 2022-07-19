@@ -8,7 +8,7 @@ import com.example.to_doapp.util.Constants.TASK_SCREEN
 class Screens(navController:NavHostController) {
     val list: (Action)-> Unit = { action ->
         navController.navigate("List/${action.name}") {
-            popUpTo(LIST_SCREEN)
+            popUpTo(LIST_SCREEN) {inclusive = true}
         }
     }
     val task:(Int) -> Unit = { taskId ->

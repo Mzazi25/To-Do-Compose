@@ -4,5 +4,9 @@
     <string name="search_task">Search Task</string>
     <string name="sort_list">Sort List</string>
     <string name="delete_all">Delete All</string>
+    <string name="search_widget">Search</string>
+    <string name="close_search_bar">"Close Search Bar"</string>
 
+
+    "Close Search Bar"
 </resources>

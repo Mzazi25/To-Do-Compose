@@ -4,8 +4,11 @@ package com.example.to_doapp.ui.theme.screen
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
@@ -21,9 +24,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontSynthesis.Companion.All
 import androidx.compose.ui.text.input.DeleteAllCommand
+import androidx.compose.ui.text.input.ImeAction
 import com.example.to_doapp.components.PriorityItem
 import com.example.to_doapp.ui.theme.LARGE_PADDING
 import com.example.to_doapp.ui.theme.TOP_BAR_HEIGHT
@@ -158,18 +165,74 @@ fun DeleteAll(
 
 @Composable
 fun SearchAppBar(
-    Text: String,
+    text: String,
     onTextChanged:(String) ->Unit,
     onClosedClicked: () ->Unit,
-    onSearchedClicked:() -> Unit
+    onSearchedClicked:(String) -> Unit
 ) {
     Surface(
         modifier = Modifier
-        .height(TOP_BAR_HEIGHT)
-        .fillMaxWidth(),
+            .height(TOP_BAR_HEIGHT)
+            .fillMaxWidth(),
         elevation = AppBarDefaults.TopAppBarElevation,
         color = MaterialTheme.colors.topAppBackgroundColor
     ) {
+        TextField(
+            modifier = Modifier
+                .fillMaxWidth(),
+            value = text,
+            onValueChange ={
+                onTextChanged(it)
+            },
+            placeholder = {
+                Text(
+                    modifier = Modifier.alpha(ContentAlpha.medium),
+                    text = stringResource(id = R.string.search_widget),
+                    color = Color.White
+                )
+            },
+            singleLine = true,
+            maxLines = 1,
+            textStyle = TextStyle(
+               color = MaterialTheme.colors.topAppContentColor,
+                fontSize = MaterialTheme.typography.subtitle1.fontSize
+            ),
+            leadingIcon = {
+                IconButton(
+                    modifier = Modifier.alpha(ContentAlpha.disabled),
+                    onClick = {}) {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = stringResource(id = R.string.search_task),
+                        tint = MaterialTheme.colors.topAppContentColor
+                    )
+                }
+
+            },
+            trailingIcon = {
+                IconButton(
+                    onClick = {onClosedClicked() }) {
+                    Icon(
+                        imageVector = Icons.Filled.Close,
+                        contentDescription = stringResource(id = R.string.close_search_bar),
+                        tint = MaterialTheme.colors.topAppContentColor
+                    )
+                }
+            },
+            keyboardOptions = KeyboardOptions(
+                imeAction = ImeAction.Search
+            ),
+            keyboardActions = KeyboardActions {
+                onSearchedClicked(text)
+            },
+            colors = TextFieldDefaults.textFieldColors(
+                cursorColor = MaterialTheme.colors.topAppContentColor,
+                focusedIndicatorColor = Color.Transparent,
+                disabledIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                backgroundColor = Color.Transparent
+            )
+        )
     }
 }
 @Preview

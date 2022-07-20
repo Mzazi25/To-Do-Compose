@@ -10,9 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.to_doapp.data.models.Priority
 import com.example.to_doapp.ui.theme.LARGE_PADDING
 import com.example.to_doapp.ui.theme.PRIORITY_INDICATOR_SIZE

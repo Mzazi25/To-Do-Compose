@@ -1,6 +1,8 @@
 package com.example.to_doapp.ui.theme.screen
 
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -24,6 +26,7 @@ import androidx.compose.ui.text.font.FontSynthesis.Companion.All
 import androidx.compose.ui.text.input.DeleteAllCommand
 import com.example.to_doapp.components.PriorityItem
 import com.example.to_doapp.ui.theme.LARGE_PADDING
+import com.example.to_doapp.ui.theme.TOP_BAR_HEIGHT
 import kotlin.math.exp
 
 
@@ -153,6 +156,22 @@ fun DeleteAll(
     }
 }
 
+@Composable
+fun SearchAppBar(
+    Text: String,
+    onTextChanged:(String) ->Unit,
+    onClosedClicked: () ->Unit,
+    onSearchedClicked:() -> Unit
+) {
+    Surface(
+        modifier = Modifier
+        .height(TOP_BAR_HEIGHT)
+        .fillMaxWidth(),
+        elevation = AppBarDefaults.TopAppBarElevation,
+        color = MaterialTheme.colors.topAppBackgroundColor
+    ) {
+    }
+}
 @Preview
 @Composable
 fun DefaultTopBarPreview() {

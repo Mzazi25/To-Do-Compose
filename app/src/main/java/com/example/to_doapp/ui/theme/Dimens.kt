@@ -9,3 +9,5 @@ val MEDIUM_PADDING = 8.dp
 val SMALL_PADDING = 6.dp
 
 val PRIORITY_INDICATOR_SIZE = 16.dp
+
+val TOP_BAR_HEIGHT = 56.dp

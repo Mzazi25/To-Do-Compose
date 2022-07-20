@@ -6,28 +6,34 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.to_doapp.R
 
 @Composable
 fun ListScreen(navigateToTaskScreen : (Int) -> Unit) {
 
     Scaffold(
+        topBar = {
+
+        },
         content = {},
         floatingActionButton = {
-            ListFab()
+            ListFab(navigateToTaskScreen)
         }
     )
 }
 
 @Composable
-fun ListFab() {
+fun ListFab(navigateToTaskScreen : (Int) -> Unit) {
     FloatingActionButton(
-        onClick = { }
+        onClick = {
+            navigateToTaskScreen(-1)
+        }
     ) {
         Icon(
             imageVector = Icons.Default.Add,
-            contentDescription = "Add Task" )
+            contentDescription = stringResource(id = R.string.add_task) )
     }
 }
 

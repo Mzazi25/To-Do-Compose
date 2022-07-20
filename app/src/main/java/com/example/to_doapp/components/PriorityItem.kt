@@ -14,14 +14,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.to_doapp.data.models.Priority
+import com.example.to_doapp.ui.theme.LARGE_PADDING
+import com.example.to_doapp.ui.theme.PRIORITY_INDICATOR_SIZE
 
 @Composable
 fun PriorityItem(priority: Priority) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Canvas(modifier = Modifier.size(16.dp)){
+        Canvas(modifier = Modifier.size(PRIORITY_INDICATOR_SIZE)){
             drawCircle(priority.color)
         }
-        Spacer(modifier = Modifier.width(12.dp))
+        Spacer(modifier = Modifier.width(LARGE_PADDING))
         Text(
             text = priority.name,
             color = MaterialTheme.colors.onSurface,

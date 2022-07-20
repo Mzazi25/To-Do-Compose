@@ -23,13 +23,17 @@ import kotlin.math.exp
 
 @Composable
 fun ListAppBar() {
-    DefaultListAppBar{
-
-    }
+    DefaultListAppBar(
+        onSearchClick = {},
+        onSortPriority = {}
+    )
 }
 
 @Composable
-fun DefaultListAppBar(onSearchClick : () -> Unit) {
+fun DefaultListAppBar(
+    onSearchClick : () -> Unit,
+    onSortPriority: (Priority) -> Unit
+) {
     TopAppBar(
         title = {
             Text(
@@ -39,14 +43,18 @@ fun DefaultListAppBar(onSearchClick : () -> Unit) {
         },
         backgroundColor = MaterialTheme.colors.topAppBackgroundColor,
         actions = {
-            ListAppBarActions(onSearchClick)
+            ListAppBarActions(onSearchClick, onSortPriority)
         }
     )
 }
 
 @Composable
-fun ListAppBarActions( onSearchClick : () -> Unit) {
+fun ListAppBarActions(
+    onSearchClick : () -> Unit,
+    onSortPriority: (Priority) -> Unit
+) {
     searchAction(onSearchClick = onSearchClick)
+    SortAction(onSortPriority = onSortPriority)
 }
 
 @Composable

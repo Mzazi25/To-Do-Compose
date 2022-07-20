@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.to_doapp.ui.theme.screen.ListScreen
 import com.example.to_doapp.util.Constants.LIST_ARGUMENTS
 import com.example.to_doapp.util.Constants.LIST_SCREEN
 
@@ -17,6 +18,6 @@ fun NavGraphBuilder.listComposable(
             type = NavType.StringType
         })
     ){
-
+        ListScreen(navigateToTaskScreen = navigateToTaskScreen)
     }
 }

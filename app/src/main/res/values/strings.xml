@@ -7,8 +7,7 @@
     <string name="search_widget">Search</string>
     <string name="close_search_bar">"Close Search Bar"</string>
     <string name="tasks">Tasks</string>
+    <string name="sad_face">Sad Face</string>
+    <string name="no_task_found">No Tasks Found</string>
 
-
-
-    "Close Search Bar"
 </resources>

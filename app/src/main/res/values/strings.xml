@@ -1,4 +1,5 @@
 <resources>
+    <string name="go_back_arrow">Go Back Arrow</string>
     <string name="app_name">To-Do App</string>
     <string name="add_task">Add Task</string>
     <string name="search_task">Search Task</string>

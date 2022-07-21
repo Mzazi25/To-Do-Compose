@@ -2,6 +2,8 @@ package com.example.to_doapp.ui.theme.screen
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -9,18 +11,32 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.to_doapp.data.models.Priority
 import com.example.to_doapp.data.models.ToDoTask
 import com.example.to_doapp.ui.theme.*
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ListContent() {
-
+fun ListContent(
+    tasks:List<ToDoTask>,
+    navigateToTaskScreen:(taskId: Int) ->Unit)
+{
+    LazyColumn(){
+        items(
+            items = tasks,
+            key = { task->
+                task.id
+            }
+        ){ task->
+            TaskItem(
+                toDoTask = task,
+                navigateToTaskScreen = navigateToTaskScreen
+            )
+        }
+    }
 }
 @ExperimentalMaterialApi
 @Composable

@@ -1,5 +1,6 @@
 package com.example.to_doapp.ui.theme.screen
 
+import android.util.Log
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -7,6 +8,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,6 +23,10 @@ fun ListScreen(
     sharedViewModel: SharedViewModel,
     navigateToTaskScreen : (taskId:Int) -> Unit) {
 
+    LaunchedEffect(key1 =true){
+        sharedViewModel.getAllTask()
+    }
+    val allTasks = sharedViewModel.allTask.collectAsState()
     val searchAppBarState: SearchAppBarState by
     sharedViewModel.searchAppBarState
 

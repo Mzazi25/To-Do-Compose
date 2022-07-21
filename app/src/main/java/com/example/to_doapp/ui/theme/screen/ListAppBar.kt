@@ -34,16 +34,43 @@ import androidx.compose.ui.text.input.ImeAction
 import com.example.to_doapp.components.PriorityItem
 import com.example.to_doapp.ui.theme.LARGE_PADDING
 import com.example.to_doapp.ui.theme.TOP_BAR_HEIGHT
+import com.example.to_doapp.ui.theme.viewModels.SharedViewModel
+import com.example.to_doapp.util.SearchAppBarState
 import kotlin.math.exp
 
 
 @Composable
-fun ListAppBar() {
-    DefaultListAppBar(
-        onSearchClick = {},
-        onSortPriority = {},
-        onDeleteAll = {}
-    )
+fun ListAppBar(
+    sharedViewModel: SharedViewModel,
+    searchAppBarState: SearchAppBarState,
+    searchText:String
+) {
+    when(searchAppBarState){
+        SearchAppBarState.CLOSED ->{
+            DefaultListAppBar(
+                onSearchClick = {
+                                sharedViewModel.searchAppBarState.value =SearchAppBarState.OPENED
+                },
+                onSortPriority = {},
+                onDeleteAll = {}
+            )
+        }
+        else ->{
+            SearchAppBar(
+                text = searchText,
+                onClosedClicked = {
+                                  sharedViewModel.searchAppBarState.value =
+                                      SearchAppBarState.CLOSED
+                                    sharedViewModel.searchText.value= ""
+                },
+                onSearchedClicked = {},
+                onTextChanged = { newText->
+                    sharedViewModel.searchText.value = newText
+                }
+            )
+        }
+    }
+
 }
 
 @Composable

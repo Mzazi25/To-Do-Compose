@@ -18,7 +18,7 @@ import com.example.to_doapp.data.models.Priority
 import com.example.to_doapp.data.models.ToDoTask
 import com.example.to_doapp.ui.theme.*
 
-@OptIn(ExperimentalMaterialApi::class)
+@ExperimentalMaterialApi
 @Composable
 fun ListContent(
     tasks:List<ToDoTask>,

@@ -1,10 +1,7 @@
 package com.example.to_doapp.ui.theme.screen
 
 import android.util.Log
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
@@ -18,6 +15,7 @@ import com.example.to_doapp.ui.theme.fabBackgroundColor
 import com.example.to_doapp.ui.theme.viewModels.SharedViewModel
 import com.example.to_doapp.util.SearchAppBarState
 
+@ExperimentalMaterialApi
 @Composable
 fun ListScreen(
     sharedViewModel: SharedViewModel,
@@ -26,7 +24,7 @@ fun ListScreen(
     LaunchedEffect(key1 =true){
         sharedViewModel.getAllTask()
     }
-    val allTasks = sharedViewModel.allTask.collectAsState()
+    val allTasks by sharedViewModel.allTask.collectAsState()
     val searchAppBarState: SearchAppBarState by
     sharedViewModel.searchAppBarState
 
@@ -40,7 +38,10 @@ fun ListScreen(
             )
         },
         content = {
-            ListContent()
+            ListContent(
+                tasks = allTasks,
+                navigateToTaskScreen= navigateToTaskScreen
+            )
         },
         floatingActionButton = {
             ListFab(navigateToTaskScreen)

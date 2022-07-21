@@ -32,7 +32,9 @@ fun ListScreen(
                 searchText =searchText
             )
         },
-        content = {},
+        content = {
+            ListContent()
+        },
         floatingActionButton = {
             ListFab(navigateToTaskScreen)
         }

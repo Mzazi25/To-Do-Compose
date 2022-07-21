@@ -36,6 +36,7 @@ import com.example.to_doapp.ui.theme.LARGE_PADDING
 import com.example.to_doapp.ui.theme.TOP_BAR_HEIGHT
 import com.example.to_doapp.ui.theme.viewModels.SharedViewModel
 import com.example.to_doapp.util.SearchAppBarState
+import com.example.to_doapp.util.TrailingIconState
 import kotlin.math.exp
 
 
@@ -82,7 +83,7 @@ fun DefaultListAppBar(
     TopAppBar(
         title = {
             Text(
-                text = "Tasks",
+                text = stringResource(id = R.string.tasks),
                 color = MaterialTheme.colors.topAppContentColor
             )
         },
@@ -110,7 +111,7 @@ fun searchAction(
     onSearchClick : () -> Unit
 ) {
     IconButton(
-        onClick = {onSearchClick}) {
+        onClick = {onSearchClick()}) {
         Icon(
             imageVector= Icons.Default.Search,
             contentDescription = stringResource(id = R.string.search_task),
@@ -197,6 +198,7 @@ fun SearchAppBar(
     onClosedClicked: () ->Unit,
     onSearchedClicked:(String) -> Unit
 ) {
+    var trailingIconState by remember { mutableStateOf(TrailingIconState.READY_TO_DELETE)}
     Surface(
         modifier = Modifier
             .height(TOP_BAR_HEIGHT)
@@ -238,7 +240,22 @@ fun SearchAppBar(
             },
             trailingIcon = {
                 IconButton(
-                    onClick = {onClosedClicked() }) {
+                    onClick = {
+                        when(trailingIconState){
+                            TrailingIconState.READY_TO_DELETE ->{
+                                onTextChanged("")
+                                trailingIconState=TrailingIconState.READY_TO_CLOSE
+                            }
+                            TrailingIconState.READY_TO_CLOSE ->{
+                                if(text.isNotEmpty()){
+                                    onTextChanged("")
+                                }else {
+                                    onClosedClicked()
+                                    trailingIconState =TrailingIconState.READY_TO_DELETE
+                                }
+                            }
+                        }
+                    }) {
                     Icon(
                         imageVector = Icons.Filled.Close,
                         contentDescription = stringResource(id = R.string.close_search_bar),

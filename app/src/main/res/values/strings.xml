@@ -1,10 +1,13 @@
 <resources>
     <string name="go_back_arrow">Go Back Arrow</string>
     <string name="app_name">To-Do App</string>
+    <string name="close_icon">Close Icon </string>
     <string name="add_task">Add Task</string>
     <string name="search_task">Search Task</string>
     <string name="sort_list">Sort List</string>
     <string name="delete_all">Delete All</string>
+    <string name="delete_task">Delete Task</string>
+    <string name="update_task">Update Task</string>
     <string name="search_widget">Search</string>
     <string name="close_search_bar">"Close Search Bar"</string>
     <string name="tasks">Tasks</string>

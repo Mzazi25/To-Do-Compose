@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.selects.select
 import javax.inject.Inject
 
 @HiltViewModel
@@ -35,6 +36,16 @@ class SharedViewModel @Inject constructor(private val repository: ToDoRepository
 
         } catch (e:Exception){
             _allTasks.value = RequestState.Error(e)
+        }
+    }
+
+    private val _selectedTask: MutableStateFlow<ToDoTask?> = MutableStateFlow(null)
+    val selectedTask: StateFlow<ToDoTask?> = _selectedTask
+    fun getSelectedTask(taskId: Int){
+        viewModelScope.launch {
+            repository.getSelectedTask(taskId).collect{ task->
+                _selectedTask.value = task
+            }
         }
     }
 }

@@ -24,11 +24,11 @@ fun ListScreen(
     LaunchedEffect(key1 =true){
         sharedViewModel.getAllTask()
     }
+    val action by sharedViewModel.action
     val allTasks by sharedViewModel.allTask.collectAsState()
-    val searchAppBarState: SearchAppBarState by
-    sharedViewModel.searchAppBarState
-
+    val searchAppBarState: SearchAppBarState by sharedViewModel.searchAppBarState
     val searchText:String by sharedViewModel.searchText
+    sharedViewModel.handleDatabaseActions(action)
     Scaffold(
         topBar = {
             ListAppBar(

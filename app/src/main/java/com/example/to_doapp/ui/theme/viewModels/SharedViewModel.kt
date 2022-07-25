@@ -21,7 +21,7 @@ import javax.inject.Inject
 class SharedViewModel @Inject constructor(private val repository: ToDoRepository):ViewModel() {
 
     val id: MutableState<Int> = mutableStateOf(0)
-    val text: MutableState<String> = mutableStateOf("")
+    val description: MutableState<String> = mutableStateOf("")
     val title: MutableState<String> = mutableStateOf("")
     val priority: MutableState<Priority> = mutableStateOf(Priority.LOW)
 

@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun ListScreen(
     sharedViewModel: SharedViewModel,
+
     navigateToTaskScreen : (taskId:Int) -> Unit) {
 
     LaunchedEffect(key1 =true){
@@ -31,6 +32,9 @@ fun ListScreen(
     DisplaySnackBar(
         scaffoldState = scaffoldState,
         action =action,
+        onUndoClicked ={
+                       sharedViewModel.action.value = it
+        },
         handleDatabaseAction = { sharedViewModel.handleDatabaseActions(action) },
         taskTitle = sharedViewModel.title.value
     )
@@ -74,6 +78,7 @@ fun ListFab(navigateToTaskScreen : (taskId:Int) -> Unit) {
 fun DisplaySnackBar(
     scaffoldState: ScaffoldState,
     action: Action,
+    onUndoClicked: (Action) -> Unit,
     handleDatabaseAction: () -> Unit,
     taskTitle: String
 ) {
@@ -84,14 +89,35 @@ fun DisplaySnackBar(
             scope.launch {
                 val snackBarResult = scaffoldState.snackbarHostState.showSnackbar(
                     message = "${action.name}: $taskTitle",
-                    actionLabel = "Ok"
+                    actionLabel = setActionLabel(action)
+                )
+                undoDeletedTask(
+                    action = Action.DELETE,
+                    snackBarResult = snackBarResult,
+                    onUndoClicked = onUndoClicked
                 )
             }
         }
     }
 }
 
+private fun setActionLabel(action: Action): String{
+    return if(action.name == "DELETE"){
+        "UNDO"
+    }else{
+        "OK"
+    }
+}
 
+private fun undoDeletedTask(
+    action: Action,
+    snackBarResult: SnackbarResult,
+    onUndoClicked: (Action) -> Unit
+){
+    if (snackBarResult == SnackbarResult.ActionPerformed && action == Action.DELETE){
+       onUndoClicked(Action.UNDO)
+    }
+}
 
 
 

@@ -1,5 +1,6 @@
 package com.example.to_doapp.ui.theme.viewModels
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -102,7 +103,7 @@ class SharedViewModel @Inject constructor(private val repository: ToDoRepository
                 updateTask()
             }
             Action.UNDO ->{
-
+                addTask()
             }
             Action.DELETE ->{
                 deleteTask()
@@ -117,6 +118,7 @@ class SharedViewModel @Inject constructor(private val repository: ToDoRepository
     }
 
     fun updateTaskField(selectedTask: ToDoTask?){
+        Log.d("Updated task Fields", selectedTask.toString())
         if(selectedTask != null){
             id.value = selectedTask.id
             title.value = selectedTask.title

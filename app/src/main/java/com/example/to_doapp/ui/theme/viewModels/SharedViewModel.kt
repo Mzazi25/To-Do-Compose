@@ -70,6 +70,7 @@ class SharedViewModel @Inject constructor(private val repository: ToDoRepository
         }
     }
 
+
     fun handleDatabaseActions(action: Action){
         when(action){
             Action.ADD ->{

@@ -18,22 +18,45 @@ import com.example.to_doapp.data.models.Priority
 import com.example.to_doapp.data.models.ToDoTask
 import com.example.to_doapp.ui.theme.*
 import com.example.to_doapp.util.RequestState
+import com.example.to_doapp.util.SearchAppBarState
 
 @ExperimentalMaterialApi
 @Composable
 fun ListContent(
-    tasks:RequestState<List<ToDoTask>>,
-    navigateToTaskScreen:(taskId: Int) ->Unit)
+    allTasks:RequestState<List<ToDoTask>>,
+    searchedTask:RequestState<List<ToDoTask>>,
+    navigateToTaskScreen:(taskId: Int) ->Unit,
+    searchAppBarState: SearchAppBarState
+)
 {
-    if(tasks is RequestState.Success){
-        if(tasks.data.isEmpty()){
-            EmptyContent()
-        }else{
-            DisplayTasks(
-                tasks = tasks.data,
-                navigateToTaskScreen = navigateToTaskScreen
+    if (searchAppBarState == SearchAppBarState.TRIGGERED){
+        if(searchedTask is RequestState.Success){
+            HandleListContent(
+                navigateToTaskScreen = navigateToTaskScreen,
+                task = searchedTask.data)
+        }
+    }else {
+        if (allTasks is RequestState.Success){
+            HandleListContent(
+                navigateToTaskScreen = navigateToTaskScreen,
+                task = allTasks.data
             )
         }
+    }
+}
+@ExperimentalMaterialApi
+@Composable
+fun HandleListContent(
+    navigateToTaskScreen:(taskId: Int) ->Unit,
+    task:List<ToDoTask>,
+) {
+    if(task.isEmpty()){
+        EmptyContent()
+    }else{
+        DisplayTasks(
+            tasks = task,
+            navigateToTaskScreen = navigateToTaskScreen
+        )
     }
 }
 @ExperimentalMaterialApi

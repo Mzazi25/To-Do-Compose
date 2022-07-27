@@ -17,6 +17,8 @@
     <string name="description_label">Description</string>
     <string name="on_yes_click">Yes</string>
     <string name="on_no_click">No</string>
+    <string name="delete_tsk">Remove \'%1$s\'?</string>
+    <string name="delete_task_confirmation">Are you sure you want to remove \'%1$s\'?</string>
     <string name="no_task_found">No Tasks Found</string>
 
 </resources>

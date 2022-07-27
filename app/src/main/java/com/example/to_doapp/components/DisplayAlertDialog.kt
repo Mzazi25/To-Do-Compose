@@ -1,9 +1,6 @@
 package com.example.to_doapp.components
 
-import androidx.compose.material.AlertDialog
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -43,7 +40,7 @@ fun DisplayAlertDialog(
                             }
             },
             dismissButton = {
-                Button(
+                OutlinedButton(
                     onClick = {
                         onCloseClick() })
                 {

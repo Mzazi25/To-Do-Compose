@@ -35,6 +35,7 @@ import com.example.to_doapp.components.PriorityItem
 import com.example.to_doapp.ui.theme.LARGE_PADDING
 import com.example.to_doapp.ui.theme.TOP_BAR_HEIGHT
 import com.example.to_doapp.ui.theme.viewModels.SharedViewModel
+import com.example.to_doapp.util.Action
 import com.example.to_doapp.util.SearchAppBarState
 import com.example.to_doapp.util.TrailingIconState
 import kotlin.math.exp
@@ -53,7 +54,9 @@ fun ListAppBar(
                                 sharedViewModel.searchAppBarState.value =SearchAppBarState.OPENED
                 },
                 onSortPriority = {},
-                onDeleteAll = {}
+                onDeleteAll = {
+                    sharedViewModel.action.value = Action.DELETE_ALL
+                }
             )
         }
         else ->{

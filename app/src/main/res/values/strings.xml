@@ -15,6 +15,8 @@
     <string name="sad_face">Sad Face</string>
     <string name="title_label">Title</string>
     <string name="description_label">Description</string>
+    <string name="on_yes_click">Yes</string>
+    <string name="on_no_click">No</string>
     <string name="no_task_found">No Tasks Found</string>
 
 </resources>

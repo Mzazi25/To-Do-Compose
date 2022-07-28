@@ -15,9 +15,7 @@ import com.example.to_doapp.util.RequestState
 import com.example.to_doapp.util.SearchAppBarState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.selects.select
 import javax.inject.Inject
@@ -70,6 +68,46 @@ class SharedViewModel @Inject constructor(
 
         } catch (e:Exception){
             _allTasks.value = RequestState.Error(e)
+        }
+    }
+
+    fun persistSortState(priority: Priority){
+            viewModelScope.launch (Dispatchers.IO){
+                dataStoreRepository.persistSortStore(priority = priority)
+            }
+    }
+
+    val sortLowPriority:StateFlow<List<ToDoTask>> =
+        repository.sortByLowPriority.stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(),
+            emptyList()
+        )
+    val sortHighPriority:StateFlow<List<ToDoTask>> =
+        repository.sortByHighPriority.stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(),
+            emptyList()
+        )
+    private val _sortState =
+        MutableStateFlow<RequestState<Priority>>(RequestState.Idle)
+    val sortState: StateFlow<RequestState<Priority>> = _sortState
+
+    fun readSortState(){
+        _sortState.value = RequestState.Loading
+        try {
+            viewModelScope.launch {
+                dataStoreRepository.readSortState
+                    .map {
+                        Priority.valueOf(it)
+                    }
+                    .collect {
+                        _sortState.value = RequestState.Success(it)
+                    }
+            }
+
+        } catch (e:Exception){
+            _sortState.value = RequestState.Error(e)
         }
     }
 

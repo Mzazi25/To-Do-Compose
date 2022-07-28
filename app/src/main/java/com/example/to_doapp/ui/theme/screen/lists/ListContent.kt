@@ -24,25 +24,48 @@ import com.example.to_doapp.util.SearchAppBarState
 @Composable
 fun ListContent(
     allTasks:RequestState<List<ToDoTask>>,
+    lowPriorityTask:List<ToDoTask>,
+    highPriorityTask:List<ToDoTask>,
+    sortState: RequestState<Priority>,
     searchedTask:RequestState<List<ToDoTask>>,
     navigateToTaskScreen:(taskId: Int) ->Unit,
     searchAppBarState: SearchAppBarState
 )
 {
-    if (searchAppBarState == SearchAppBarState.TRIGGERED){
-        if(searchedTask is RequestState.Success){
-            HandleListContent(
-                navigateToTaskScreen = navigateToTaskScreen,
-                task = searchedTask.data)
+    if (sortState is RequestState.Success){
+
+        when{
+            searchAppBarState ==SearchAppBarState.TRIGGERED ->{
+                if(searchedTask is RequestState.Success){
+                    HandleListContent(
+                        navigateToTaskScreen = navigateToTaskScreen,
+                        task = searchedTask.data)
+                }
+            }
+            sortState.data == Priority.NONE ->{
+                if (allTasks is RequestState.Success){
+                    HandleListContent(
+                        navigateToTaskScreen = navigateToTaskScreen,
+                        task = allTasks.data
+                    )
+                }
         }
-    }else {
-        if (allTasks is RequestState.Success){
-            HandleListContent(
-                navigateToTaskScreen = navigateToTaskScreen,
-                task = allTasks.data
-            )
+           sortState.data == Priority.LOW ->{
+               HandleListContent(
+                   navigateToTaskScreen = navigateToTaskScreen,
+                   task = lowPriorityTask
+               )
+           }
+
+            sortState.data ==Priority.HIGH ->{
+                HandleListContent(
+                    navigateToTaskScreen = navigateToTaskScreen,
+                    task = highPriorityTask
+                )
+            }
         }
     }
+
 }
 @ExperimentalMaterialApi
 @Composable

@@ -17,7 +17,7 @@ val darkGrey = Color(0xFF141414)
 val lowPriority = Color(0xFF00C980)
 val mediumPriority = Color(0xFFFFC114)
 val highPriority = Color(0xFFFF4646)
-val nonePriority = Color(0xFFFFFFFF)
+val nonePriority = mediumGrey
 
 val Colors.taskItemColor: Color
     @Composable

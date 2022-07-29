@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -18,9 +19,17 @@ import com.example.to_doapp.R
 import com.example.to_doapp.ui.theme.IMAGE_PADDING
 import com.example.to_doapp.ui.theme.ToDoAppTheme
 import com.example.to_doapp.ui.theme.splashScreen
+import com.example.to_doapp.util.Constants.SPLASH_SCREEN_DELAY
+import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    navigateToListScreen: () -> Unit
+) {
+    LaunchedEffect(key1 = true ){
+        delay(SPLASH_SCREEN_DELAY)
+        navigateToListScreen()
+    }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -47,13 +56,6 @@ fun getLogo(): Int {
 @Preview
 @Composable
 fun SplashScreenPreview() {
-    SplashScreen()
+    SplashScreen(navigateToListScreen = {})
 }
 
-@Preview
-@Composable
-fun SplashScreenPreview2() {
-    ToDoAppTheme(darkTheme = true) {
-        SplashScreen()
-    }
-}

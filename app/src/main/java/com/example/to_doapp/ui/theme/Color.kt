@@ -19,6 +19,10 @@ val mediumPriority = Color(0xFFFFC114)
 val highPriority = Color(0xFFFF4646)
 val nonePriority = mediumGrey
 
+val Colors.splashScreen: Color
+    @Composable
+    get() = if (isLight) Purple700 else Color.Black
+
 val Colors.taskItemColor: Color
     @Composable
     get() = if (isLight) darkGrey else lightGrey

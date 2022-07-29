@@ -5,8 +5,7 @@ import androidx.compose.ui.unit.dp
 val LARGE_PADDING = 12.dp
 val RED_BACKGROUND_PADDING = 24.dp
 val MEDIUM_PADDING = 8.dp
-
-val SMALL_PADDING = 6.dp
+val IMAGE_PADDING = 100.dp
 
 val PRIORITY_INDICATOR_SIZE = 16.dp
 

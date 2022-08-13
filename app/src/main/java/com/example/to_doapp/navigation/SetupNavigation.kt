@@ -28,12 +28,11 @@ fun SetupNavigation(
         startDestination = SPLASH_SCREEN
     ){
 
-        splashComposable  (
-            navigateToListScreen = screen.splash
-                )
+        splashComposable(
+            navigateToListScreen = screen.splash)
         listComposable(
-            navigateToTaskScreen = screen.list,
-            sharedViewModel = sharedViewModel
+            sharedViewModel= sharedViewModel,
+            navigateToTaskScreen = screen.list
         )
         taskComposable(
             sharedViewModel= sharedViewModel,

@@ -59,37 +59,7 @@ The Mobile Application is still in development. Currently, Users can create, upd
 
 ## 📦 Package Structure
 
- ```
-dev.spikeysanju.einsen
-├── app                   # Application class
-├── components            # All resuable components for this app
-├── data                  # For data handling
-│   ├── local               # Local Persistence Database. Room (SQLite) database
-│   │   ├── Dao               # Data Access Object for Room
-│   │   └── Database          # Database Instance
-│   └── datastore
-│       └── ThemePref         # Datastore Theme Preference 
-├── di                        # Hilt DI Modules
-├── model                     # Model class for [Task] & [Emoji]
-├── navigation                # For navigation handling
-│   ├── Routes                # All unique navigation routes of this app
-│   └── NavGraph              # Single source for Navigation Routes of this app
-├── repository                # Used to handle all data operations
-├── ui.theme                  # Theme setup for this app
-├── utils                     # Extension functions
-├── view                      # All composables screens root folder
-│   ├── add                   # Add Task Screen
-│   ├── edit_task             # Edit Task Screen
-│   ├── dashboard             # Dashboard Screen
-│   ├── all_task              # All Task Screen
-│   ├── task_details          # Task Details Screen
-│   ├── emoji                 # Choose Emoji Screen
-│   ├── webview               # WebView Screen
-│   ├── animation             # Animation Placeholders for State handling(Loading, Error, Empty etc.)
-│   ├── about                 # About Screen
-│   └── viewmodel             # ViewModel 
-└── MainActivity.kt           # MainActivity 
-
+ 
 ```
 
 <br />

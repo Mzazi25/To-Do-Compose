@@ -57,12 +57,6 @@ The Mobile Application is still in development. Currently, Users can create, upd
 
 <br />
 
-## 📦 Package Structure
-
- 
-```
-
-<br />
 
 ## 🗼 Architecture
 

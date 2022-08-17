@@ -1,7 +1,6 @@
 <table style="width:100%">
   <tr>
     <td>
-
 ## TODO Application
 
 <p align="left"> An Android mobile application that enables users to create todos. Users can also update and delete todos
@@ -19,7 +18,6 @@
 
 </td> 
 <td>
- 
 https://user-images.githubusercontent.com/95022986/185205586-5f1f974a-f5e5-4acf-a4ba-51de9aae115f.mp4
 </td>
 </tr>
@@ -71,6 +69,7 @@ https://user-images.githubusercontent.com/95022986/185205586-5f1f974a-f5e5-4acf-
     - Modular and customizable Material Design UI components for Android.
 
 <br />
+
 ## 🗼 Architecture
 This app uses [***MVVM (Model View
 View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.

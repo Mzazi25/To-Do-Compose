@@ -1,24 +1,29 @@
-
-# 🎯 ToDo Application
-
-An Android mobile application that enables users to create todos. Users can also update and delete todos
-#### By **[Caleb Langat](https://github.com/Mzazi25)**
-## Description
-
-The Mobile Application is still in development. Currently, Users can create, update and delete todo items
-
-<br />
-
-## 🎨 UI Design
-
 <table style="width:100%">
-    <tr>
-       ![Recording_AdobeExpress](https://user-images.githubusercontent.com/95022986/185195684-cfd919b7-2b50-4aa2-8a13-6d8b8a4f3fbe.gif)
-        </tr>
+  <tr>
+    <td>
+
+## TODO Application
+
+<p align="left"> An Android mobile application that enables users to create todos. Users can also update and delete todos
+
+. </p>
+
+### The purpose of this repository
+
+- Build a fully functional Android app built entirely with Kotlin and Jetpack Compose.
+- Follows Android design and development best practices with Compose.
+- Explore the possibilities of creating Ui and Ux using a simple ToDo application which we can use on a daily base
+
+### Status: 👨‍💻 Complete
+
+<p>ToDo Compose is complete and will be updated if any issues arise.</p>
+
+</td> 
+<td>
+  <img src = "Pictures/recording.gif" width="240"/>
+</td>
+</tr>
 </table>
-
-
-<br/>
 ## 🌞 Day Mode
 
 |   All Tasks    | Add Task    |   Splash Screen   | Empty State

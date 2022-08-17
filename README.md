@@ -12,7 +12,9 @@ The Mobile Application is still in development. Currently, Users can create, upd
 ## 🎨 UI Design
 
 <table style="width:100%">
-  ![Recording_AdobeExpress](https://user-images.githubusercontent.com/95022986/185195684-cfd919b7-2b50-4aa2-8a13-6d8b8a4f3fbe.gif)
+    <tr>
+       ![Recording_AdobeExpress](https://user-images.githubusercontent.com/95022986/185195684-cfd919b7-2b50-4aa2-8a13-6d8b8a4f3fbe.gif)
+        </tr>
 </table>
 
 

@@ -17,7 +17,17 @@ The Mobile Application is still in development. Currently, Users can create, upd
 
 ## 🌞 Day Mode
 
-<td><img src = "ab1_inversions.jpg" width=240/></td>
+|   All Tasks    | Add Task    |   Splash Screen   
+|---	|---	|---
+|  ![Dashboard](https://user-images.githubusercontent.com/95022986/185187001-9d1beaa7-e025-4295-aacd-5757778bdaf4.jpeg)    |  ![AddTaskLight](https://user-images.githubusercontent.com/95022986/185187873-a7ae99ea-3cee-48ed-b361-1e706be4e24f.jpeg)
+    |   ![SplashScreenLight](https://user-images.githubusercontent.com/95022986/185188108-7d584efe-82b3-4b9d-99a8-92bdb695016b.jpeg)
+    
+
+|   Add Task  |   Emoji    | Empty State    |
+|---    |---	|---	|
+|   ![](https://github.com/Spikeysanju/Einsen/blob/master/art/add_task_day.png)    |   ![](https://github.com/Spikeysanju/Einsen/blob/master/art/choose_emoji_day.png)      |   ![](https://github.com/Spikeysanju/Einsen/blob/master/art/empty_state_day.png)
+
+<br />
 
 
 ## 🌚 We Support Dark Mode Too

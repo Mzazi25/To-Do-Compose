@@ -15,6 +15,57 @@ The Mobile Application is still in development. Currently, Users can create, upd
 
 <br />
 
+<div id="top"></div>
+
+<table style="width:100%">
+  <tr>
+    <td>
+
+## Discord Compose
+
+<p align="left"> A clone of Android Discord app in Android built using Jetpack compose. </p>
+
+<p align="left">
+    <a href = "https://developer.android.com/jetpack/androidx/versions/all-channel#february_23_2022">
+      <img src = "https://img.shields.io/badge/Jetpack%20Compose-1.1.1-blue.svg?color=blue&style=for-the-badge" />
+    </a>
+    <a href="https://kotlinlang.org/docs/releases.html">
+      <img src="https://img.shields.io/badge/Kotlin-1.6.10-blue.svg?color=blue&style=for-the-badge"/>
+    </a>
+    <a href = "https://github.com/Anmol92verma/DiscordJetpackCompose/stargazers">
+        <img src="https://img.shields.io/github/stars/Anmol92verma/DiscordJetpackCompose?color=green&style=for-the-badge" />
+    </a>
+    <a href = "https://github.com/Anmol92verma/DiscordJetpackCompose/network/members">
+        <img src="https://img.shields.io/github/forks/Anmol92verma/DiscordJetpackCompose?color=green&style=for-the-badge" />
+    </a>
+    <a href = "https://github.com/Anmol92verma/DiscordJetpackCompose/watchers">
+        <img src="https://img.shields.io/github/watchers/Anmol92verma/DiscordJetpackCompose?color=yellowgreen&style=for-the-badge" />
+    </a>
+    <a href = "https://github.com/Anmol92verma/DiscordJetpackCompose/issues">
+        <img src="https://img.shields.io/github/issues/Anmol92verma/DiscordJetpackCompose?color=orange&style=for-the-badge" />
+    </a>
+</p>
+
+### The purpose of this repository
+
+- Build a fully functional Android app built entirely with Kotlin and Jetpack Compose.
+- Follows Android design and development best practices with Compose.
+- Explore the possibilities of creating complex ui and ux of a popular app like Discord using
+  Compose.
+
+### Status: 👨‍💻 In progress
+
+<p>Discord Compose is under active development.</p>
+
+</td> 
+<td>
+    <img src = "https://user-images.githubusercontent.com/95022986/185193193-a11ca9d8-be6e-4ac6-b0bb-862224be99db.mp4
+" width="240"/>
+
+</td>
+</tr>
+</table>
+
 ## 🌞 Day Mode
 
 |   All Tasks    | Add Task    |   Splash Screen   | Empty State

@@ -6,11 +6,15 @@
 <p align="left"> An Android mobile application that enables users to create todos. Users can also update and delete todos
 </p>
 
+## Description
+
+This is a modern Mobile Appliction where users can add, create, delete and update tasks. The Mobile Application which is specifically on Android phones currently is built on Jetpack Compose and Kotlin.
+
 ### The purpose of this repository
 
-- Build a fully functional Android app built entirely with Kotlin and Jetpack Compose.
 - Follows Android design and development best practices with Compose.
 - Explore the possibilities of creating Ui and Ux using a simple ToDo application which we can use on a daily base
+- Build a fully functional Android app built entirely with Kotlin and Jetpack Compose.
 
 ### Status: 👨‍💻 Complete
 

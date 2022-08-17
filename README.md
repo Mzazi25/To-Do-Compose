@@ -1,8 +1,8 @@
 <table style="width:100%">
   <tr>
-    <td>
+  <td>
+  
 ## TODO Application
-
 <p align="left"> An Android mobile application that enables users to create todos. Users can also update and delete todos
 </p>
 

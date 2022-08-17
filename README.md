@@ -5,8 +5,7 @@
 ## TODO Application
 
 <p align="left"> An Android mobile application that enables users to create todos. Users can also update and delete todos
-
-. </p>
+</p>
 
 ### The purpose of this repository
 
@@ -20,10 +19,11 @@
 
 </td> 
 <td>
-  <img src = "Pictures/recording.gif" width="240"/>
+  <img src = "art/recording.gif" width="240"/>
 </td>
 </tr>
 </table>
+
 ## 🌞 Day Mode
 
 |   All Tasks    | Add Task    |   Splash Screen   | Empty State
@@ -70,23 +70,15 @@
     - Modular and customizable Material Design UI components for Android.
 
 <br />
-
-
 ## 🗼 Architecture
-
 This app uses [***MVVM (Model View
 View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
 
-
 ## 🧰 Build-tool
-
 Android Studio Chipmunk
 
-
 ## 🤝 Contribute
-
 If you want to contribute to this app, you're always welcome!
-
 <br>
 
 ## 📩 Contact

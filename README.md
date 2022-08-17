@@ -19,7 +19,7 @@
 
 </td> 
 <td>
-  <img src = "art/recording.gif" width="240"/>
+  <img src = "art/recording.gif" width="260"/>
 </td>
 </tr>
 </table>

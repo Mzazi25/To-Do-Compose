@@ -17,10 +17,10 @@ The Mobile Application is still in development. Currently, Users can create, upd
 
 ## 🌞 Day Mode
 
+<td><img src = "ab1_inversions.jpg" width=240/></td>
 
 
 ## 🌚 We Support Dark Mode Too
-
 
 
 ## 🛠 Built With

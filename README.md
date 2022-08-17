@@ -19,7 +19,8 @@
 
 </td> 
 <td>
-  <img src = "art/recording.gif" width="260"/>
+ 
+https://user-images.githubusercontent.com/95022986/185205586-5f1f974a-f5e5-4acf-a4ba-51de9aae115f.mp4
 </td>
 </tr>
 </table>

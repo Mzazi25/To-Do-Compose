@@ -59,8 +59,7 @@ The Mobile Application is still in development. Currently, Users can create, upd
 
 </td> 
 <td>
-    <img src = "https://user-images.githubusercontent.com/95022986/185193193-a11ca9d8-be6e-4ac6-b0bb-862224be99db.mp4
-" width="240"/>
+   https://user-images.githubusercontent.com/95022986/185193193-a11ca9d8-be6e-4ac6-b0bb-862224be99db.mp4
 
 </td>
 </tr>

@@ -24,14 +24,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private lateinit var navController : NavHostController
-    private val sharedViewModel: SharedViewModel by viewModels()
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ToDoAppTheme{
                 navController = rememberNavController()
-                SetupNavigation(navController,sharedViewModel)
+                SetupNavigation(navController)
             }
 
             }
